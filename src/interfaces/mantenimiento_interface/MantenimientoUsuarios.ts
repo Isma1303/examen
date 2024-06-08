@@ -47,4 +47,4 @@ const actualizarUsuario = (id_Usuario:number, actualizarUsuario: actualizarUsuar
         writeFileSync(direccionDeArchivo, JSON.stringify(UsuarioFianl))
         
 }
-export {lecturaDeUsuarios, actualizarUsuario, eliminarUsuario, crearUsuario}
+export {lecturaDeUsuarios, actualizarUsuario, eliminarUsuario, crearUsuario, estadoDeUsuario}

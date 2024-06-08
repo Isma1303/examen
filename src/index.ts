@@ -3,7 +3,8 @@ import { eliminarServicio } from "./interfaces/mantenimiento_interface/Mantenimi
 import { ActualizarServicio,ProductoServicio,CrearServicio } from "./interfaces/producto_servicio.interface";
 import { Receta, CrearReceta,ActualizarReceta } from "./interfaces/receta.interface";
 import { Factura, CrearFactura,ActualizarFactura } from "./interfaces/factura.interface";
-import { obtenerEdadPaciente } from "./interfaces/mantenimiento_interface/MantenimientoPacientes";
+import { estadoDeUsuario,crearUsuario,actualizarUsuario,eliminarUsuario } from "./interfaces/mantenimiento_interface/MantenimientoUsuarios";
+// import { obtenerEdadPaciente, crearUsario, } from "./interfaces/mantenimiento_interface/MantenimientoPacientes";
 import { cancelarCita, obtenerCitasDoctor, obtenerCitasPaciente, obtenerCitasPorFecha, programarCita, reprogramarCita } from "./interfaces/mantenimiento_interface/MantenimientoCitas";
 
 
