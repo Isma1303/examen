@@ -1,20 +1,50 @@
 [
   {
-    "fecha_hora": "2024-06-01 10:00",
-    "id_paciente": 1,
-    "id_doctor": 1
+    "fecha": "2024-06-01 ",
+    "pacienteId": 1,
+    "doctorId": 1,
+    "estado": "cancelada",
+    "hora": "10:10",
+    "descripcion": "El paciente necesita hacer limpieza general"
   },
   {
-    "fecha_hora": "2024-06-03 14:00",
-    "id_paciente": 2,
-    "id_doctor": 1
+    "fecha": "2024-06-03 ",
+    "pacienteId": 2,
+    "doctorId": 1,
+    "estado": "completada",
+    "hora": "10:10",
+    "descripcion": "El paciente necesita hacer limpieza general"
   },
   {
     "citaId": 3,
     "pacienteId": 4,
     "doctorId": 1,
     "fecha": "12-12-2024",
-    "hora": "100:10",
+    "hora": "10:10",
+    "descripcion": "El paciente necesita hacer limpieza general",
+    "estado": "programada"
+  },
+  {
+    "citaId": 4,
+    "pacienteId": 4,
+    "doctorId": 1,
+    "fecha": "12-12-2024",
+    "descripcion": "El paciente necesita hacer limpieza general",
+    "estado": "programada"
+  },
+  {
+    "citaId": 5,
+    "pacienteId": 4,
+    "doctorId": 1,
+    "fecha": "12-12-2024",
+    "descripcion": "El paciente necesita hacer limpieza general",
+    "estado": "programada"
+  },
+  {
+    "citaId": 6,
+    "pacienteId": 4,
+    "doctorId": 1,
+    "fecha": "12-12-2024",
     "descripcion": "El paciente necesita hacer limpieza general",
     "estado": "programada"
   }

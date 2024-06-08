@@ -19,20 +19,20 @@ const eliminarServicio = (id: number)=>{
     writeFileSync(direccionDeArchivo, JSON.stringify(productofinal))
 }
 
-const actualizarProductoS = (id:number, actualizarproducto: ActualizarServicio )=>{
-    const priductosActuales = lecturaDeServicios()
-    const actualizarservicios = priductosActuales.filter((ProductoServicio)=> ProductoServicio.id == id)[0]
-    if (actualizarservicios.id) actualizarservicios.id= actualizarservicios.id
-    if (actualizarservicios.tipo) actualizarservicios.tipo= actualizarservicios.tipo
-    if (actualizarservicios.nombre) actualizarservicios.nombre= actualizarservicios.nombre
-    if (actualizarservicios.precio) actualizarservicios.precio= actualizarservicios.precio
-    if (actualizarservicios.stock) actualizarservicios.stock= actualizarservicios.stock
-    eliminarServicio(id)
-    const UsuarioFianl = lecturaDeServicios()
-    UsuarioFianl.push(actualizarservicios)
-    writeFileSync(direccionDeArchivo, JSON.stringify(UsuarioFianl))
+// const actualizarProductoS = (id:number, actualizarproducto: ActualizarServicio )=>{
+//     const priductosActuales = lecturaDeServicios()
+//     const actualizarservicios = priductosActuales.filter((ProductoServicio)=> ProductoServicio.id == id)[0]
+//     if (actualizarservicios.id) actualizarservicios.id= actualizarservicios.id
+//     if (actualizarservicios.tipo) actualizarservicios.tipo= actualizarservicios.tipo
+//     if (actualizarservicios.nombre) actualizarservicios.nombre= actualizarservicios.nombre
+//     if (actualizarservicios.precio) actualizarservicios.precio= actualizarservicios.precio
+//     if (actualizarservicios.stock) actualizarservicios.stock= actualizarservicios.stock
+//     eliminarServicio(id)
+//     const UsuarioFianl = lecturaDeServicios()
+//     UsuarioFianl.push(actualizarservicios)
+//     writeFileSync(direccionDeArchivo, JSON.stringify(UsuarioFianl))
     
-}
+// }
 const buscarproducto = (id:number)=>{
     const productosActivos = lecturaDeServicios()
     const producto = productosActivos.find(p =>p.id=== id)
@@ -45,4 +45,4 @@ const buscarproducto = (id:number)=>{
     }
 }
 
-export {lecturaDeServicios, actualizarProductoS, eliminarServicio, CrearServicio, buscarproducto }
+export {lecturaDeServicios, eliminarServicio, CrearServicio, buscarproducto }

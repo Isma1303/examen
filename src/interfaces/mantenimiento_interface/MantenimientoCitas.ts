@@ -16,14 +16,13 @@ const escrituraCitas = (citas: Cita[]) => {
 }
 
 
-const programarCita = (pacienteId: number, doctorId: number, fecha: string, hora: string, descripcion: string): void => {
+const programarCita = (pacienteId: number, doctorId: number, fecha: string, descripcion: string): void => {
     const citas = lecturaCitas();
     const nuevaCita: Cita = {
         citaId: citas.length + 1,
         pacienteId,
         doctorId,
         fecha,
-        hora,
         descripcion,
         estado: 'programada',
     };
@@ -54,7 +53,6 @@ const reprogramarCita = (citaId: number, nuevaFecha: string, nuevaHora: string):
         return;
     }
     cita.fecha = nuevaFecha;
-    cita.hora = nuevaHora;
     cita.estado = 'programada';
     escrituraCitas(citas);
     console.log('Cita reprogramada: ID ${citaId} para ${nuevaFecha} a las ${nuevaHora}');
