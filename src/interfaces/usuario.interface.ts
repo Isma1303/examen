@@ -4,5 +4,19 @@ export interface Usuario {
     carnet: number
     clave: string
     habilitado : boolean
-    rol :'admin' | 'doctor' | 'recepcionista'
+
+}
+export interface  CrearUsuario {
+    id_usuario?: number
+    nombre: string
+    carnet: number
+    clave: string
+    habilitado : boolean
+}
+export interface actualizarUsuario{
+    id_usuario?: number
+    nombre?: string
+    carnet?: number
+    clave?: string
+    habilitado ?: boolean
 }

@@ -1,20 +1,23 @@
 [
     {
-        "id_producto_servicio": 1,
+        "id": 1,
         "tipo": "Servicio",
         "nombre": "Limpieza Dental",
-        "precio": 300.0
+        "precio": 300.0,
+        "stock": true
     },
     {
-        "id_producto_servicio": 2,
+        "id": 2,
         "tipo": "Servicio",
         "nombre": "Empaste",
-        "precio": 500.0
+        "precio": 500.0,
+        "stock": true
     },
     {
-        "id_producto_servicio": 3,
+        "id": 3,
         "tipo": "Producto",
         "nombre": "Pasta Dental",
-        "precio": 25.0
+        "precio": 25.0,
+        "stock": true
     }
 ]
