@@ -54,3 +54,4 @@ function obtenerProductosPorFactura(facturaId: number): ItemFactura[] {
         return [];
     }
 }
+export{obtenerFacturasPorCliente,obtenerProductosPorFactura,CrearFactura,eliminarfactura,ActualizarFactura}

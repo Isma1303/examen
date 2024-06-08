@@ -33,3 +33,4 @@ const eliminarReceta= (recetaId: number)=>{
 //     recetaFinal.push(ActualizarReceta)
 //     writeFileSync(direccionDeArchivo, JSON.stringify(recetaFinal))
 // }
+export{lectuaDeReceta,CrearReceta,ActualizarReceta,eliminarReceta}

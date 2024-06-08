@@ -45,4 +45,4 @@ const bucarproducto = (id:number)=>{
     }
 }
 
-export {lecturaDeServicios, ActualizarServicio, eliminarServicio, CrearServicio}
+export {lecturaDeServicios, ActualizarServicio, eliminarServicio, CrearServicio, bucarproducto, }

@@ -57,3 +57,4 @@ function contarPacientes(): number {
     console.log(`Conteo total de pacientes: ${total}`);
     return total;
 }
+export{contarPacientes,CrearPaciente,eliminarPaciente,ActualizarPaciente,obtenerEdadPaciente,obtenerUltimasRecetas,obtenerTodosPacientes}
