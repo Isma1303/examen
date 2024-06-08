@@ -1,1 +1,18 @@
-[{"facturaId":1,"clienteId":1,"fecha":"2024-10-10T06:00:00.000Z","serviciosConsumidos":[],"total":120},{"facturaId":1,"clienteId":1,"fecha":"2024-10-10T06:00:00.000Z","serviciosConsumidos":[],"total":120},{"facturaId":1,"clienteId":1,"fecha":"2024-10-10T06:00:00.000Z","serviciosConsumidos":[],"total":120}]
+[
+    {
+        "facturaId": 1,
+        "fechA": "2024-06-01 10:00",
+        "pacienteId": 1,
+        "doctorId": 1,
+        "serviciosConsumidos": [1],
+        "total": 300
+    },
+    {
+        "facturaId": 2,
+        "fecha": "2024-06-03 14:00",
+        "pacienteId": 2,
+        "doctorId": 1,
+        "serviciosConsumidos": [2, 3],
+        "total": 525
+    }
+]
