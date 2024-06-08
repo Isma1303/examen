@@ -1,6 +1,7 @@
 [
     {
         "pacienteId": 1,
+        "recetaId":1,
         "doctorId": 1,
         "medicamentos": [
             {
