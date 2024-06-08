@@ -47,5 +47,21 @@
     "fecha": "12-12-2024",
     "descripcion": "El paciente necesita hacer limpieza general",
     "estado": "programada"
+  },
+  {
+    "citaId": 7,
+    "pacienteId": 4,
+    "doctorId": 1,
+    "fecha": "12-12-2024",
+    "descripcion": "El paciente necesita hacer limpieza general",
+    "estado": "programada"
+  },
+  {
+    "citaId": 8,
+    "pacienteId": 4,
+    "doctorId": 1,
+    "fecha": "12-12-2024",
+    "descripcion": "El paciente necesita hacer limpieza general",
+    "estado": "programada"
   }
 ]

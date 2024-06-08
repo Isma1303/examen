@@ -1,11 +1,10 @@
-[{"id":1,"tipo":"Servicio","nombre":"Empaste","precio":500,"stock":true},{
-    "id": 2,
-    "tipo": "Servicio",
-    "nombre": "Empaste",
-    "precio": 500.0
-},
-{       "id": 3,
-        "tipo": "Producto",
-        "nombre": "Pasta Dental",
-        "precio": 25.0,
-        "stock":true}]
+[
+  { "id": 2, "tipo": "Servicio", "nombre": "Empaste", "precio": 500 },
+  {
+    "id": 3,
+    "tipo": "Producto",
+    "nombre": "Pasta Dental",
+    "precio": 25,
+    "stock": true
+  }
+]

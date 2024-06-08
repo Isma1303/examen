@@ -1,18 +1,1 @@
-[
-    {
-        "facturaId": 1,
-        "fechA": "2024-06-01 10:00",
-        "pacienteId": 1,
-        "doctorId": 1,
-        "serviciosConsumidos": [1],
-        "total": 300
-    },
-    {
-        "facturaId": 2,
-        "fecha": "2024-06-03 14:00",
-        "pacienteId": 2,
-        "doctorId": 1,
-        "serviciosConsumidos": [2, 3],
-        "total": 525
-    }
-]
+[{"facturaId":2,"fecha":"2024-06-03 14:00","clienteId":2,"doctorId":1,"serviciosConsumidos":[2,3],"total":525}]
