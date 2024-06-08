@@ -1,16 +1,1 @@
-[
-    {
-        "pacienteId": 1,
-        "recetaId":1,
-        "doctorId": 1,
-        "medicamentos": [
-            {
-                "nombre": "Ibuprofeno",
-                "dosis": "400mg",
-                "frecuencia_horas": 8,
-                "duracion_dias": 3,
-                "preciounitario" : 10
-            }
-        ]
-    }
-]
+[{"recetaId":3,"doctorId":1,"pacienteId":2,"fecha":"2024-10-12T06:00:00.000Z","medicamentos":[]},{"recetaId":3,"doctorId":1,"pacienteId":2,"fecha":"2024-10-12T06:00:00.000Z","medicamentos":[]}]

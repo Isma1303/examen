@@ -1,13 +1,21 @@
 [
-    {
-        "fecha_hora": "2024-06-01 10:00",
-        "id_paciente": 1,
-        "id_doctor": 1
-        
-    },
-    {
-        "fecha_hora": "2024-06-03 14:00",
-        "id_paciente": 2,
-        "id_doctor": 1
-    }
+  {
+    "fecha_hora": "2024-06-01 10:00",
+    "id_paciente": 1,
+    "id_doctor": 1
+  },
+  {
+    "fecha_hora": "2024-06-03 14:00",
+    "id_paciente": 2,
+    "id_doctor": 1
+  },
+  {
+    "citaId": 3,
+    "pacienteId": 4,
+    "doctorId": 1,
+    "fecha": "12-12-2024",
+    "hora": "100:10",
+    "descripcion": "El paciente necesita hacer limpieza general",
+    "estado": "programada"
+  }
 ]

@@ -33,7 +33,7 @@ const actualizarProductoS = (id:number, actualizarproducto: ActualizarServicio )
     writeFileSync(direccionDeArchivo, JSON.stringify(UsuarioFianl))
     
 }
-const bucarproducto = (id:number)=>{
+const buscarproducto = (id:number)=>{
     const productosActivos = lecturaDeServicios()
     const producto = productosActivos.find(p =>p.id=== id)
     if (producto){
@@ -45,4 +45,4 @@ const bucarproducto = (id:number)=>{
     }
 }
 
-export {lecturaDeServicios, ActualizarServicio, eliminarServicio, CrearServicio, bucarproducto, }
+export {lecturaDeServicios, actualizarProductoS, eliminarServicio, CrearServicio, buscarproducto }
