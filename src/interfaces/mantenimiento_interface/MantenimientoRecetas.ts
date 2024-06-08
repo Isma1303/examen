@@ -22,7 +22,7 @@ const eliminarReceta= (recetaId: number)=>{
 }
 const ActualizarReceta = (recetaId:number, actualizarreceta:ActualizarReceta )=>{
     const ActualizarReceta = lectuaDeReceta()
-    const recetaconcambios = actualizarreceta.filter((Receta)=> Receta.recetaId == recetaId)[0]
+    const recetaconcambios = actualizarreceta.filter((Receta: { recetaId: number })=> Receta.recetaId == recetaId)[0]
     if (recetaconcambios.recetaId) recetaconcambios.recetaId= recetaconcambios.recetaId
     if (recetaconcambios.doctorId) recetaconcambios.doctorId= recetaconcambios.doctorId
     if (recetaconcambios.pacienteId) recetaconcambios.pacienteId= recetaconcambios.pacienteId

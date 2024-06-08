@@ -15,6 +15,7 @@ export interface CrearReceta {
     medicamentos: Medicamento[]
 }
 export interface ActualizarReceta{
+    filter: any
     recetaId?: number
     doctorId?: number
     pacienteId?:number
