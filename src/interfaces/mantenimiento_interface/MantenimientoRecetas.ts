@@ -20,16 +20,16 @@ const eliminarReceta= (recetaId: number)=>{
     const recetaFinal = RecetaActual.filter((Receta)=>Receta.recetaId!== recetaId)
     writeFileSync(direccionDeArchivo, JSON.stringify(recetaFinal))
 }
-const ActualizarReceta = (recetaId:number, actualizarreceta:ActualizarReceta )=>{
-    const ActualizarReceta = lectuaDeReceta()
-    const recetaconcambios = actualizarreceta.filter((Receta: { recetaId: number })=> Receta.recetaId == recetaId)[0]
-    if (recetaconcambios.recetaId) recetaconcambios.recetaId= recetaconcambios.recetaId
-    if (recetaconcambios.doctorId) recetaconcambios.doctorId= recetaconcambios.doctorId
-    if (recetaconcambios.pacienteId) recetaconcambios.pacienteId= recetaconcambios.pacienteId
-    if (recetaconcambios.fecha) recetaconcambios.fecha= recetaconcambios.fecha
-    if (recetaconcambios.medicamentos) recetaconcambios.medicamentos= recetaconcambios.medicamento
-    eliminarReceta(recetaId)
-    const recetaFinal = lectuaDeReceta()
-    recetaFinal.push(ActualizarReceta)
-    writeFileSync(direccionDeArchivo, JSON.stringify(recetaFinal))
-}
+// const ActualizarReceta = (recetaId:number, actualizarreceta:ActualizarReceta )=>{
+//     const ActualizarReceta = lectuaDeReceta()
+//     const recetaconcambios = actualizarreceta.filter((Receta: { recetaId: number })=> Receta.recetaId == recetaId)[0]
+//     if (recetaconcambios.recetaId) recetaconcambios.recetaId= recetaconcambios.recetaId
+//     if (recetaconcambios.doctorId) recetaconcambios.doctorId= recetaconcambios.doctorId
+//     if (recetaconcambios.pacienteId) recetaconcambios.pacienteId= recetaconcambios.pacienteId
+//     if (recetaconcambios.fecha) recetaconcambios.fecha= recetaconcambios.fecha
+//     if (recetaconcambios.medicamento) recetaconcambios.medicamento= recetaconcambios.medicamento
+//     eliminarReceta(recetaId)
+//     const recetaFinal = lectuaDeReceta()
+//     recetaFinal.push(ActualizarReceta)
+//     writeFileSync(direccionDeArchivo, JSON.stringify(recetaFinal))
+// }
