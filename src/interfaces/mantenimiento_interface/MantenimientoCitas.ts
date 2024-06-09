@@ -70,7 +70,7 @@ const obtenerCitasDoctor = (doctorId: number): Cita[] => {
 const obtenerCitasPaciente = (pacienteId: number): Cita[] => {
     const citas = lecturaCitas();
     const citasPaciente = citas.filter(c => c.pacienteId === pacienteId);
-    console.log('Citas del paciente ID ${pacienteId}:, citasPaciente');
+    console.log(`Citas del paciente ID ${pacienteId}:, citasPaciente`);
     return citasPaciente;
 }
 
