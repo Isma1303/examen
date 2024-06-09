@@ -3,15 +3,7 @@ import { Paciente } from '../paciente.interface';
 import { Receta } from '../receta.interface';
 
 export class MantenimientoPacientes {
-  static obtenerEdadPaciente(arg0: number): any {
-      throw new Error("Method not implemented.");
-  }
-  static obtenerTodosLosPacientes() {
-      throw new Error("Method not implemented.");
-  }
-  static obtenerRecetasDePacientes(id: number): Receta[] {
-      throw new Error("Method not implemented.");
-  }
+
   private pacientes: Paciente[] = [];
 
   constructor() {

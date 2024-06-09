@@ -2,7 +2,7 @@
 import * as MantenimientoDeProductos from "./interfaces/mantenimiento_interface/MantenimientoDeProductos";
 import { crearUsuario,actualizarUsuario,eliminarUsuario } from "./interfaces/mantenimiento_interface/MantenimientoUsuarios";
 import { cancelarCita, obtenerCitasDoctor, obtenerCitasPaciente, obtenerCitasPorFecha, programarCita } from "./interfaces/mantenimiento_interface/MantenimientoCitas";
-import { CrearFactura, eliminarfactura, obtenerFacturasPorCliente, ActualizarFactura } from "./interfaces/mantenimiento_interface/MantenimientoFactura";
+import { MantenimientoFactura } from "./interfaces/mantenimiento_interface/MantenimientoFactura";
 import { CrearReceta, eliminarReceta } from "./interfaces/mantenimiento_interface/MantenimientoRecetas";
 import { actualizarProductoS } from "./interfaces/mantenimiento_interface/MantenimientoDeProductos";
 import { Receta } from "./interfaces/receta.interface";
@@ -44,7 +44,7 @@ import { obtenerEdadPaciente } from "./interfaces/mantenimiento_interface/Manten
 *citas de un doctor, 
 *citas de un paciente obtener doctores dispono¡bles para una fecha, 
 obtener medicamentos de una receta, 
-obtener el total de facturacion por mes*/
+*obtener el total de facturacion por mes*/
 
 /*---------------Ultimas 5 recetas ---------------------*/
 
@@ -83,4 +83,11 @@ obtener el total de facturacion por mes*/
 // }
 
 /*------------- Edad Del Paciente ---------------*/
-console.log(MantenimientoPacientes.obtenerEdadDelPaciente(2))
+// console.log(MantenimientoPacientes.obtenerEdadPaciente(2))
+
+/*----------------- total de facturacion por mes ------------------- */
+
+// function facturacionMes(mes:number, anio: number){
+//     const totalFacturacion = MantenimientoFactura.obtenerTotalFacturacionPorMes(mes, anio);
+//     console.log(`Total de facturación para ${mes}/${anio}:`, totalFacturacion);
+// }

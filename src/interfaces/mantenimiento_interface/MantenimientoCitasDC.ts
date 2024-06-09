@@ -2,9 +2,7 @@ import * as fs from 'fs';
 import { Cita } from '../cita.interface';
 
 export class obtenerCitas {
-    static obtenerCitasDeDoctor(arg0: number): any {
-        throw new Error("Method not implemented.");
-    }
+
   private citas: Cita[] = [];
 
   constructor() {

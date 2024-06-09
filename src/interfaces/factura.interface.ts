@@ -1,5 +1,7 @@
 import { ItemFactura } from "./itemfactura.interface";
 export interface Factura {
+    nombre: any;
+    pacienteId: number;
     facturaId: number;
     clienteId: number; 
     fecha: Date; 
