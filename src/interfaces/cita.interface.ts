@@ -2,7 +2,7 @@ export interface Cita {
     citaId: number;
     pacienteId: number;
     doctorId: number;
-    fecha: string; 
+    fecha: Date; 
     descripcion: string;
     estado: 'programada' | 'cancelada' | 'completada';
 }

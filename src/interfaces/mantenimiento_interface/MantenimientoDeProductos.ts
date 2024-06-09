@@ -46,3 +46,7 @@ const buscarproducto = (id:number)=>{
 }
 
 export {lecturaDeServicios, eliminarServicio, CrearServicio, buscarproducto, actualizarProductoS }
+
+export function obtenerEdadPaciente(arg0: number): any {
+    throw new Error("Function not implemented.")
+}

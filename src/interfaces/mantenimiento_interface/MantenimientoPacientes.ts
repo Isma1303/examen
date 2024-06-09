@@ -1,60 +1,111 @@
-import { readFileSync, writeFileSync } from 'fs' 
-import { Paciente, ActualizarPaciente,CrearPaciente } from '../paciente.interface'
+import * as fs from 'fs';
+import { Paciente } from '../paciente.interface';
 import { Receta } from '../receta.interface';
-const direccionDeArchivo = 'data/pacientes.json'
-const Pacientes : Paciente[]=[];
-const facturas: Paciente[] = [];
 
- const lecturadePaciente = ():Paciente []=>{
-    const archivo: string=readFileSync(direccionDeArchivo,'utf8')
-    if (archivo.trim()=== '' )return[]
-    return JSON.parse(archivo) as Paciente[]
-}
-const crearPaciente =(crearPaciente : Paciente) =>{
-    const productosactuales = lecturadePaciente()
-    crearPaciente.pacienteId = 3
-    productosactuales.push(crearPaciente as Paciente)
-    writeFileSync(direccionDeArchivo, JSON.stringify(productosactuales))
-}
-const eliminarPaciente= (pacienteId: number)=>{
-    const pacientesActuales = lecturadePaciente()
-    const pacientesFinales = pacientesActuales.filter((Paciente)=>Paciente.pacienteId!== pacienteId)
-    writeFileSync(direccionDeArchivo, JSON.stringify(pacientesFinales))
-}
-const buscarPaciente=(pacienteId: number): Paciente | undefined => {
-    const paciente = Pacientes.find(p => p.pacienteId === pacienteId);
+export class MantenimientoPacientes {
+  static obtenerEdadPaciente(arg0: number): any {
+      throw new Error("Method not implemented.");
+  }
+  static obtenerTodosLosPacientes() {
+      throw new Error("Method not implemented.");
+  }
+  static obtenerRecetasDePacientes(id: number): Receta[] {
+      throw new Error("Method not implemented.");
+  }
+  private pacientes: Paciente[] = [];
+
+  constructor() {
+    this.cargarPacientes();
+  }
+
+  private cargarPacientes(): void {
+    try {
+      const data = fs.readFileSync('./data/pacientes.json', 'utf-8');
+      this.pacientes = JSON.parse(data);
+    } catch (error) {
+      console.error('Error al cargar los pacientes:', error);
+    }
+  }
+
+  private guardarPacientes(): void {
+    fs.writeFileSync('./data/pacientes.json', JSON.stringify(this.pacientes, null, 2));
+  }
+  private obtenerPacientesPorId(id: number): Paciente | undefined {
+    return this.pacientes.find(pacientes => pacientes.pacienteId === id);
+  }
+  private obtenerUltimoIdPaciente(): number {
+    if (this.pacientes.length === 0) {
+        return 1; 
+    }
+    const ultimoUsuario = this.pacientes[this.pacientes.length - 1];
+    return ultimoUsuario.pacienteId + 1; 
+  }
+  crearPaciente(paciente: Paciente): void {
+    const id = this.obtenerUltimoIdPaciente(); 
+    paciente.pacienteId = id; 
+    this.pacientes.push(paciente);
+    this.guardarPacientes();
+    console.log(paciente);
+  }
+  pacienteExiste(id: number): boolean {
+    return !!this.obtenerPacientePorId(id);
+  }
+  editarPaciente(id: number, nuevoPaciente: Partial<Paciente>): void {
+    const pacienteExistente = this.obtenerPacientePorId(id);
+      if (pacienteExistente) {
+          const index = this.pacientes.findIndex(user => user.pacienteId === id);
+          const usuarioActualizado = { ...this.pacientes[index], ...nuevoPaciente };
+          this.pacientes[index] = usuarioActualizado;
+          this.guardarPacientes();
+          console.log(usuarioActualizado);
+          console.log('Paciente editado correctamente.');
+      } else {
+          console.error('Error: El paciente no existe.');
+      }
+    }
+
+  eliminarPaciente(id: number): void {
+    const pacienteExistente = this.obtenerPacientePorId(id);
+    if (pacienteExistente) {
+      this.pacientes = this.pacientes.filter(paciente => paciente.pacienteId !== id);
+      this.guardarPacientes();
+      console.log("Paciente eliminado correctamente");
+  } else {
+      console.error('Error: El paciente no existe.');
+  }
+    
+  }
+
+  obtenerPacientePorId(id: number): Paciente | undefined {
+    return this.pacientes.find(paciente => paciente.pacienteId === id);
+  }
+
+  obtenerEdadDelPaciente(id: number): {edad: number | undefined, nombre: string | undefined }{
+    const paciente = this.obtenerPacientePorId(id);
     if (paciente) {
-        console.log(`Paciente encontrado: ${paciente.nombre}`);
-        return paciente;
-    } else {
-        console.log('Paciente no encontrado.');
-        return undefined;
+      const hoy = new Date();
+      const fechaNacimiento = new Date(paciente.fechaNacimiento);
+      const edadMilisegundos = hoy.getTime() - fechaNacimiento.getTime();
+      const edad = Math.floor(edadMilisegundos / (1000 * 60 * 60 * 24 * 365));
+      return { nombre: paciente.nombre, edad};
     }
-}
-function obtenerEdadPaciente(pacienteId: number): number | undefined {
-    const paciente = Pacientes.find(p => p.pacienteId === pacienteId);
-    if (!paciente) {
-        console.log('Paciente no encontrado.');
-        return undefined;
+    return {edad: undefined, nombre: undefined};
+  }
+
+  obtenerTotalPacientes(): Paciente[] {
+    return this.pacientes;
+  }
+
+  obtenerTotalDePacientes(): number {
+    return this.pacientes.length;
+  }
+
+  obtenerRecetasDePacientes(id: number): Receta[] {
+    const paciente = this.obtenerPacientePorId(id);
+    if (paciente && paciente.recetas) {
+        const recetasOrdenadas = paciente.recetas.sort((a, b) => b.recetaId - a.recetaId);
+        return recetasOrdenadas.slice(0, 5);
     }
+    return [];
 }
-function obtenerTodosPacientes(): Paciente[] {
-    console.log(`Total de pacientes: ${Pacientes.length}`);
-    return Pacientes;
 }
-function obtenerUltimasRecetas(pacienteId: number): Receta[] {
-    const paciente = Pacientes.find(p => p.pacienteId === pacienteId);
-    if (!paciente) {
-        console.log('Paciente no encontrado.');
-        return [];
-    }
-    const ultimasRecetas = paciente.recetas.slice(-5);
-    console.log(`Últimas 5 recetas del paciente ${paciente.nombre}:`, ultimasRecetas);
-    return ultimasRecetas;
-}
-function contarPacientes(): number {
-    const total = Pacientes.length;
-    console.log(`Conteo total de pacientes: ${total}`);
-    return total;
-}
-export{contarPacientes,CrearPaciente,eliminarPaciente,ActualizarPaciente,obtenerEdadPaciente,obtenerUltimasRecetas,obtenerTodosPacientes}
