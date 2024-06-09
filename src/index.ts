@@ -11,6 +11,7 @@ import { ActualizarCita } from "./interfaces/cita.interface";
 import { obtenerCitas } from "./interfaces/mantenimiento_interface/MantenimientoCitasDC";
 import {  DoctoR } from "./interfaces/mantenimiento_interface/MantenimientoDisponibilidadDeDoctor";
 import { obtenerEdadPaciente } from "./interfaces/mantenimiento_interface/MantenimientoDeProductos";
+
 const paciente = new MantenimientoPacientes();
 
 
@@ -62,7 +63,7 @@ obtener medicamentos de una receta,
 
 /*------------- Edad Del Paciente ---------------*/
 
-console.log(paciente.obtenerEdadDelPaciente(1))
+// console.log(paciente.obtenerEdadDelPaciente(1))
 
 /*----------------- total de facturacion por mes ------------------- */
 
